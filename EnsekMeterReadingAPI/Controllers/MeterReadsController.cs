@@ -65,19 +65,19 @@ namespace EnsekMeterReadingAPI.Controllers
         [Route("api/meter-reading-uploads")]
         public ActionResult<MeterReadUploadStatus> MeterReadingUploads([FromForm(Name = "meterReads")] IFormFile meterReadsCSV)
         {
-            List<MeterRead> meterReads = new List<MeterRead>();
-            List<MeterRead> validMeterReads = new List<MeterRead>();
-            MeterReadUploadStatus meterReadUploadStatus = new MeterReadUploadStatus();
-
             try
             {
-                meterReads = _service.ExtractMeterReadsFromCSV(meterReadsCSV);
-                meterReadUploadStatus = _service.ValidateAndSaveMeterReads(meterReads);
+                var meterReads = _service.ExtractMeterReadsFromCSV(meterReadsCSV);
 
-                if (meterReadUploadStatus != null)
-                    return Ok(_mapper.Map<MeterReadUploadStatusDto>(meterReadUploadStatus));
-                else
+                if (meterReads == null)
+                    return BadRequest("Invalid file format. Please upload a CSV file.");
+
+                var uploadResult = _service.ValidateAndSaveMeterReads(meterReads);
+
+                if (uploadResult == null)
                     return BadRequest();
+
+                return Ok(_mapper.Map<MeterReadUploadStatusDto>(uploadResult));
             }
             catch(Exception ex)
             {
