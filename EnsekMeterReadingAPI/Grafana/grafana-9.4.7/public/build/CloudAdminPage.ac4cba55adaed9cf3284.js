@@ -1,0 +1,5 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[5310],{223:(_,l,n)=>{n.r(l),n.d(l,{default:()=>E});var r=n(52423),e=n(68404),c=n(54899),s=n(79396),u=n(76770);function E(){const d=(0,u.q)("live-cloud"),[a,f]=(0,e.useState)([]),[o,m]=(0,e.useState)();return(0,e.useEffect)(()=>{(0,c.i)().get("api/live/write-configs").then(t=>{f(t.writeConfigs)}).catch(t=>{t.data&&m(JSON.stringify(t.data,null,2))})},[]),e.createElement(s.T,{navModel:d},e.createElement(s.T.Contents,null,o&&e.createElement("pre",null,o),!a&&e.createElement(e.Fragment,null,"Loading cloud definitions"),a&&a.map(t=>e.createElement("div",{key:t.uid},e.createElement("h2",null,t.uid),e.createElement("pre",{className:i.row},JSON.stringify(t.settings,null,2))))))}const i={row:r.css`
+    cursor: pointer;
+  `}}}]);
+
+//# sourceMappingURL=CloudAdminPage.ac4cba55adaed9cf3284.js.map

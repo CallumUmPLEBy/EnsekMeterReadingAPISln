@@ -1,0 +1,5 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[1218],{6897:(m,a,e)=>{e.r(a),e.d(a,{default:()=>c});var r=e(52423),n=e(68404),s=e(22350),E=e(54899),o=e(72648),i=e(67487),_=e(45253),l=e(79396),u=e(76770);function c(f){const M=(0,o.wW)(g),P=(0,u.q)("k8s"),t=(0,s.Z)(()=>(0,E.i)().get("/api/k8s/info")),O=()=>t.value?n.createElement("pre",null,JSON.stringify(t.value,null,2)):t.loading?n.createElement(i.$,null):n.createElement("div",{className:M.wrapper},n.createElement(_.b,{title:"No k8s client configured.",severity:"warning"}),"At startup, a service tries to load a client using:",n.createElement("ul",null,n.createElement("li",null,"Default ",n.createElement("a",{href:"https://github.com/kubernetes/client-go/blob/master/rest/config.go#L511"},"in cluster")," ","configs"),n.createElement("li",null,"$HOME/.kube/config, perhaps with minikube running")));return n.createElement(l.T,{navModel:P},n.createElement(l.T.Contents,{isLoading:t.loading},O()))}const g=f=>({wrapper:r.css`
+    display: block;
+  `})}}]);
+
+//# sourceMappingURL=K8SStoragePage.3881517f03172b521b93.js.map

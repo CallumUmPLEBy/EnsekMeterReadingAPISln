@@ -1,0 +1,69 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[1337],{50951:(H,T,n)=>{n.r(T),n.d(T,{ServiceAccountsListPageUnconnected:()=>X,default:()=>K,getStyles:()=>Z});var s=n(52423),l=n(64681),p=n.n(l),e=n(68404),S=n(36635),y=n(72648),E=n(45253),O=n(61860),m=n(39904),L=n(14747),$=n(2594),D=n(31403),g=n(98102),V=n(69142),R=n(79396),w=n(2555),i=n(77582),c=n(81168),P=n(14377),z=n(52081),Q=n(8180),v=n(66226),b=n(65135);const a=t=>`Edit service account's ${t} details`,o=(0,e.memo)(({serviceAccount:t,onRoleChange:x,roleOptions:k,onRemoveButtonClick:W,onDisable:C,onEnable:Y,onAddTokenClick:_})=>{const U=`org/serviceaccounts/${t.id}`,h=(0,y.wW)(I),G=i.Vt.hasPermissionInMetadata(c.AccessControlAction.ServiceAccountsWrite,t),q=i.Vt.hasPermission(c.AccessControlAction.ActionRolesList)&&i.Vt.hasPermission(c.AccessControlAction.ActionUserRolesList);return e.createElement("tr",{key:t.id,className:(0,s.cx)({[h.disabled]:t.isDisabled})},e.createElement("td",{className:"width-4 text-center link-td"},e.createElement("a",{href:U,"aria-label":a(t.name)},e.createElement("img",{className:"filter-table__avatar",src:t.avatarUrl,alt:`Avatar for user ${t.name}`}))),e.createElement("td",{className:"link-td max-width-10"},e.createElement("a",{className:"ellipsis",href:U,title:t.name,"aria-label":a(t.name)},t.name)),e.createElement("td",{className:"link-td max-width-10"},e.createElement("a",{className:h.accountId,href:U,title:t.login,"aria-label":a(t.name)},t.login)),i.Vt.licensedAccessControlEnabled()?e.createElement("td",null,q&&e.createElement(v.R,{userId:t.id,orgId:t.orgId,basicRole:t.role,onBasicRoleChange:N=>x(N,t),roleOptions:k,basicRoleDisabled:!G,disabled:t.isDisabled})):e.createElement("td",null,e.createElement(b.A,{"aria-label":"Role",value:t.role,disabled:!G||t.isDisabled,onChange:N=>x(N,t)})),e.createElement("td",{className:"link-td max-width-10"},e.createElement("a",{className:"ellipsis",href:U,title:"Tokens","aria-label":a(t.name)},e.createElement("div",{className:(0,s.cx)(h.tokensInfo,{[h.tokensInfoSecondary]:!t.tokens})},e.createElement("span",null,e.createElement(m.J,{name:"key-skeleton-alt"})),t.tokens||"No tokens"))),e.createElement("td",null,e.createElement(z.Lh,{justify:"flex-end"},i.Vt.hasPermission(c.AccessControlAction.ServiceAccountsWrite)&&!t.tokens&&e.createElement(D.zx,{onClick:()=>_(t),disabled:t.isDisabled},"Add token"),i.Vt.hasPermissionInMetadata(c.AccessControlAction.ServiceAccountsWrite,t)&&(t.isDisabled?e.createElement(D.zx,{variant:"primary",onClick:()=>Y(t)},"Enable"):e.createElement(D.zx,{variant:"secondary",onClick:()=>C(t)},"Disable")),i.Vt.hasPermissionInMetadata(c.AccessControlAction.ServiceAccountsDelete,t)&&e.createElement(Q.h,{className:h.deleteButton,name:"trash-alt",size:"md",onClick:()=>W(t),"aria-label":`Delete service account ${t.name}`}))))});o.displayName="ServiceAccountListItem";const I=t=>({iconRow:s.css`
+      svg {
+        margin-left: ${t.spacing(.5)};
+      }
+    `,accountId:(0,s.cx)("ellipsis",s.css`
+        color: ${t.colors.text.secondary};
+      `),deleteButton:s.css`
+      color: ${t.colors.text.secondary};
+    `,tokensInfo:s.css`
+      span {
+        margin-right: ${t.spacing(1)};
+      }
+    `,tokensInfoSecondary:s.css`
+      color: ${t.colors.text.secondary};
+    `,disabled:s.css`
+      td a {
+        color: ${t.colors.text.secondary};
+      }
+    `}),f=o;var d=n(50655);function A(t){return{...t.serviceAccounts}}const B={changeQuery:d.R5,fetchACOptions:d.bX,fetchServiceAccounts:d.Xd,deleteServiceAccount:d.yN,updateServiceAccount:d.TL,changeStateFilter:d.XE,createServiceAccountToken:d.fT,getApiKeysMigrationStatus:d.hv,getApiKeysMigrationInfo:d.xi,closeApiKeysMigrationInfo:d.f3},M=(0,S.connect)(A,B),X=({serviceAccounts:t,isLoading:x,roleOptions:k,query:W,serviceAccountStateFilter:C,apiKeysMigrated:Y,showApiKeysMigrationInfo:_,changeQuery:U,fetchACOptions:h,fetchServiceAccounts:G,deleteServiceAccount:q,updateServiceAccount:N,changeStateFilter:de,createServiceAccountToken:me,getApiKeysMigrationStatus:ee,getApiKeysMigrationInfo:te,closeApiKeysMigrationInfo:ue})=>{const j=(0,y.wW)(Z),[Ee,ne]=(0,e.useState)(!1),[ge,ae]=(0,e.useState)(!1),[ve,oe]=(0,e.useState)(!1),[fe,se]=(0,e.useState)(""),[u,F]=(0,e.useState)(null);(0,e.useEffect)(()=>{G({withLoadingIndicator:!0}),ee(),te(),i.Vt.licensedAccessControlEnabled()&&h()},[h,G,ee,te]);const le=t.length===0&&C===c.ServiceAccountStateFilter.All&&!W,pe=async(r,Le)=>{const Re={...Le,role:r};N(Re),i.Vt.licensedAccessControlEnabled()&&h()},ye=r=>{U(r)},De=r=>{de(r)},Ae=r=>{F(r),ae(!0)},Ce=async()=>{u&&q(u.id),ce()},he=r=>{F(r),oe(!0)},Te=()=>{u&&N({...u,isDisabled:!0}),ie()},Se=r=>{N({...r,isDisabled:!1})},Pe=r=>{F(r),ne(!0)},Ie=async r=>{u&&me(u.id,r,se)},Me=()=>{ne(!1),F(null),se("")},ce=()=>{ae(!1),F(null)},ie=()=>{oe(!1),F(null)},xe=()=>{ue()},re=e.createElement("a",{className:"external-link",href:"https://grafana.com/docs/grafana/latest/administration/service-accounts/",target:"_blank",rel:"noopener noreferrer"},"here."),Oe=e.createElement("span",null,"Service accounts and their tokens can be used to authenticate against the Grafana API. Find out more ",re);return e.createElement(R.T,{navId:"serviceaccounts",subTitle:Oe},e.createElement(R.T.Contents,null,Y&&_&&e.createElement(E.b,{title:`API keys migrated to Service accounts. Your keys are now called tokens and live inside respective service
+          accounts. Learn more.`,severity:"success",onRemove:xe}),e.createElement(R.T.OldNavOnly,null,e.createElement("div",{className:j.pageHeader},e.createElement("h2",null,"Service accounts"),e.createElement("div",{className:j.apiKeyInfoLabel},e.createElement(O.u,{placement:"bottom",interactive:!0,content:e.createElement(e.Fragment,null,"API keys are now service accounts with tokens. Find out more ",re)},e.createElement(m.J,{name:"question-circle"})),e.createElement("span",null,"Looking for API keys?")))),e.createElement("div",{className:"page-action-bar"},e.createElement("div",{className:"gf-form gf-form--grow"},e.createElement(L.H,{placeholder:"Search service account by name",value:W,onChange:ye,width:50})),e.createElement($.S,{options:[{label:"All",value:c.ServiceAccountStateFilter.All},{label:"With expired tokens",value:c.ServiceAccountStateFilter.WithExpiredTokens},{label:"Disabled",value:c.ServiceAccountStateFilter.Disabled}],onChange:De,value:C,className:j.filter}),!le&&i.Vt.hasPermission(c.AccessControlAction.ServiceAccountsCreate)&&e.createElement(D.Qj,{href:"org/serviceaccounts/create",variant:"primary"},"Add service account")),x&&e.createElement(w.Z,null),!x&&le&&e.createElement(e.Fragment,null,e.createElement(V.Z,{title:"You haven't created any service accounts yet.",buttonIcon:"key-skeleton-alt",buttonLink:"org/serviceaccounts/create",buttonTitle:"Add service account",buttonDisabled:!i.Vt.hasPermission(c.AccessControlAction.ServiceAccountsCreate),proTip:"Remember, you can provide specific permissions for API access to other applications.",proTipLink:"",proTipLinkTitle:"",proTipTarget:"_blank"})),!x&&t.length!==0&&e.createElement(e.Fragment,null,e.createElement("div",{className:(0,s.cx)(j.table,"admin-list-table")},e.createElement("table",{className:"filter-table filter-table--hover"},e.createElement("thead",null,e.createElement("tr",null,e.createElement("th",null),e.createElement("th",null,"Account"),e.createElement("th",null,"ID"),e.createElement("th",null,"Roles"),e.createElement("th",null,"Tokens"),e.createElement("th",{style:{width:"34px"}}))),e.createElement("tbody",null,t.map(r=>e.createElement(f,{serviceAccount:r,key:r.id,roleOptions:k,onRoleChange:pe,onRemoveButtonClick:Ae,onDisable:he,onEnable:Se,onAddTokenClick:Pe})))))),u&&e.createElement(e.Fragment,null,e.createElement(g.s,{isOpen:ge,body:`Are you sure you want to delete '${u.name}'${u.tokens?` and ${u.tokens} accompanying ${p()("token",u.tokens)}`:""}?`,confirmText:"Delete",title:"Delete service account",onConfirm:Ce,onDismiss:ce}),e.createElement(g.s,{isOpen:ve,title:"Disable service account",body:`Are you sure you want to disable '${u.name}'?`,confirmText:"Disable service account",onConfirm:Te,onDismiss:ie}),e.createElement(P.m,{isOpen:Ee,token:fe,serviceAccountLogin:u.login,onCreateToken:Ie,onClose:Me}))))},Z=t=>({table:s.css`
+      margin-top: ${t.spacing(3)};
+    `,filter:s.css`
+      margin: 0 ${t.spacing(1)};
+    `,row:s.css`
+      display: flex;
+      align-items: center;
+      height: 100% !important;
+
+      a {
+        padding: ${t.spacing(.5)} 0 !important;
+      }
+    `,unitTooltip:s.css`
+      display: flex;
+      flex-direction: column;
+    `,unitItem:s.css`
+      cursor: pointer;
+      padding: ${t.spacing(.5)} 0;
+      margin-right: ${t.spacing(1)};
+    `,disabled:s.css`
+      color: ${t.colors.text.disabled};
+    `,link:s.css`
+      color: inherit;
+      cursor: pointer;
+      text-decoration: underline;
+    `,pageHeader:s.css`
+      display: flex;
+      margin-bottom: ${t.spacing(2)};
+    `,apiKeyInfoLabel:s.css`
+      margin-left: ${t.spacing(1)};
+      line-height: 2.2;
+      flex-grow: 1;
+      color: ${t.colors.text.secondary};
+
+      span {
+        padding: ${t.spacing(.5)};
+      }
+    `,filterDelimiter:s.css`
+      flex-grow: 1;
+    `}),K=M(X)},14377:(H,T,n)=>{n.d(T,{m:()=>V});var s=n(52423),l=n(68404),p=n(44288),e=n(35645),S=n(72648),y=n(35029),E=n(24799),O=n(46967),m=n(2594),L=n(86348),$=n(31403),D=n(94599);const g=[{label:"No expiration",value:!1},{label:"Set expiration date",value:!0}],V=({isOpen:i,token:c,serviceAccountLogin:P,onCreateToken:z,onClose:Q})=>{const v=new Date;v.setDate(v.getDate()+1);const b=new Date;e.v.tokenExpirationDayLimit!==void 0&&b.setDate(b.getDate()+e.v.tokenExpirationDayLimit+1);const a=e.v.tokenExpirationDayLimit!==void 0&&e.v.tokenExpirationDayLimit>0,[o,I]=(0,l.useState)(""),[f,d]=(0,l.useState)(""),[A,B]=(0,l.useState)(a),[M,X]=(0,l.useState)(v),[Z,J]=(0,l.useState)(M!==""),K=(0,S.wW)(w);(0,l.useEffect)(()=>{i&&I(`${P}-${(0,p.Z)()}`)},[P,i]);const t=C=>{J(C!==""),X(C)},x=()=>{z({name:f||o,secondsToLive:A?R(M):void 0})},k=()=>{d(""),I(""),B(a),X(v),J(M!==""),Q()},W=c?"Service account token created":"Add service account token";return l.createElement(y.u,{isOpen:i,title:W,onDismiss:k,className:K.modal,contentClassName:K.modalContent},c?l.createElement(l.Fragment,null,l.createElement(E.g,{label:"Token",description:"Copy the token now as you will not be able to see it again. Loosing a token requires creating a new one."},l.createElement("div",{className:K.modalTokenRow},l.createElement(O.I,{name:"tokenValue",value:c,readOnly:!0}),l.createElement(D.m,{className:K.modalCopyToClipboardButton,variant:"primary",size:"md",icon:"copy",getText:()=>c},"Copy clipboard"))),l.createElement(y.u.ButtonRow,null,l.createElement(D.m,{variant:"primary",getText:()=>c,onClipboardCopy:k},"Copy to clipboard and close"),l.createElement($.zx,{variant:"secondary",onClick:k},"Close"))):l.createElement("div",null,l.createElement(E.g,{label:"Display name",description:"Name to easily identify the token",required:!0},l.createElement(O.I,{name:"tokenName",value:f,placeholder:o,onChange:C=>{d(C.currentTarget.value)}})),!A&&l.createElement(E.g,{label:"Expiration"},l.createElement(m.S,{options:g,value:A,onChange:B,size:"md"})),A&&l.createElement(E.g,{label:"Expiration date"},l.createElement(L.d,{onChange:t,value:M,placeholder:"",minDate:v,maxDate:b})),l.createElement(y.u.ButtonRow,null,l.createElement($.zx,{onClick:x,disabled:A&&!Z},"Generate token"))))},R=i=>{const c=new Date(i),P=new Date;return Math.ceil((c.getTime()-P.getTime())/1e3)},w=i=>({modal:s.css`
+      width: 550px;
+    `,modalContent:s.css`
+      overflow: visible;
+    `,modalTokenRow:s.css`
+      display: flex;
+    `,modalCopyToClipboardButton:s.css`
+      margin-left: ${i.spacing(.5)};
+    `})},75127:(H,T,n)=>{n.d(T,{t:()=>s});const s="grafana.serviceaccounts.showApiKeysMigrationInfo"},50655:(H,T,n)=>{n.d(T,{R5:()=>P,TL:()=>R,XE:()=>z,Xd:()=>g,bX:()=>$,f3:()=>b,fT:()=>i,hv:()=>D,xi:()=>v,yN:()=>w});var s=n(82897),l=n.n(s),p=n(54899),e=n(11630),S=n(82002),y=n(58379),E=n(81168),O=n(75127),m=n(45003);const L="/api/serviceaccounts";function $(){return async a=>{try{if(S.Vt.licensedAccessControlEnabled()&&S.Vt.hasPermission(E.AccessControlAction.ActionRolesList)){const o=await(0,e.ul)();a((0,m.Dn)(o))}}catch(o){console.error(o)}}}function D(){return async a=>{if(S.Vt.hasPermission(E.AccessControlAction.ServiceAccountsRead)){const o=await(0,p.i)().get("/api/serviceaccounts/migrationstatus");a((0,m.cB)(!!o?.migrated))}}}function g({withLoadingIndicator:a}={withLoadingIndicator:!1}){return async(o,I)=>{try{if(S.Vt.hasPermission(E.AccessControlAction.ServiceAccountsRead)){a&&o((0,m.pN)());const{perPage:f,page:d,query:A,serviceAccountStateFilter:B}=I().serviceAccounts,M=await(0,p.i)().get(`/api/serviceaccounts/search?perpage=${f}&page=${d}&query=${A}${c(B)}&accesscontrol=true`);o((0,m.Ub)(M))}}catch(f){console.error(f)}finally{o((0,m.dt)())}}}const V=(0,s.debounce)(a=>a(g()),500,{leading:!0});function R(a){return async o=>{await(0,p.i)().patch(`${L}/${a.id}?accesscontrol=true`,{...a}),o(g())}}function w(a){return async o=>{await(0,p.i)().delete(`${L}/${a}`),o(g())}}function i(a,o,I){return async f=>{const d=await(0,p.i)().post(`${L}/${a}/tokens`,o);I(d.key),f(g())}}const c=a=>{switch(a){case E.ServiceAccountStateFilter.WithExpiredTokens:return"&expiredTokens=true";case E.ServiceAccountStateFilter.Disabled:return"&disabled=true";default:return""}};function P(a){return async o=>{o((0,m.aj)(a)),V(o)}}function z(a){return async o=>{o((0,m.M4)(a)),o(g())}}function Q(a){return async o=>{o(pageChanged(a)),o(g())}}function v(){return async a=>{const o=y.Z.getBool(O.t,!1);a((0,m.gl)(o))}}function b(){return async a=>{y.Z.set(O.t,!1),a(v())}}}}]);
+
+//# sourceMappingURL=ServiceAccountsPage.41fdeb5daf185fefa5de.js.map
